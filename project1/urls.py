@@ -1,7 +1,8 @@
 from django.conf.urls import patterns, include, url
-from project1.views import hello, current_datetime, hours_ahead, hours_behind
+from project1.views import display_meta, hello, current_datetime, hours_ahead, hours_behind
 from django.contrib import admin
 admin.autodiscover() 
+from books import views 
 
 
 # Uncomment the next two lines to enable the admin:
@@ -23,4 +24,6 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
+    (r'^search-form/$', views.search_form),
+    (r'^search/$', views.search),
 )
