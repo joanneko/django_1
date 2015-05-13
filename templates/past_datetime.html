@@ -4,8 +4,12 @@
 
 {% block content %}
 <p>
-	{{ offset }} hour(s) ago, it was {{ dt }} You're wonderful.  
+	{{ offset }} hour(s) ago, it was {{ dt }} 
+	<p> &lt;3 </p>
 </p>
 
 {% endblock %}
 
+{% block footer %}
+{{ block.super }} &lt;3 
+{% endblock %}
