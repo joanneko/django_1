@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from project1.views import hello 
+from project1.views import hello, current_datetime
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -7,6 +7,8 @@ from project1.views import hello
 
 urlpatterns = patterns('',
 	('^hello/$', hello),
+	('^$', hello),
+	('^time/$', current_datetime), 
     # Examples:
     # url(r'^$', 'project1.views.home', name='home'),
     # url(r'^project1/', include('project1.foo.urls')),
