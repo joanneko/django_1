@@ -16,8 +16,8 @@ def hours_ahead(request, offset):
 	except ValueError:
 		raise Http404()
 	dt = datetime.datetime.now() + datetime.timedelta(hours=offset)
-	html ="<html><body>In %s hour(s), it will be %s <3 </body></html>" % (offset, dt) 
-	return HttpResponse(html)
+	return render_to_response('future_datetime.html', locals())
+
 
 def hours_behind(request, offset):
 	try:
@@ -25,5 +25,4 @@ def hours_behind(request, offset):
 	except ValueError:
 		raise Http404()
 	dt = datetime.datetime.now() - datetime.timedelta(hours=offset)
-	html="<html><body> %s hours ago, it was %s <3 </body> </html>" % (offset, dt) 
-	return HttpResponse(html)
+	return render_to_response('past_datetime.html', locals())
