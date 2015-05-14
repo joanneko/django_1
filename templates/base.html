@@ -1,12 +1,15 @@
+{% load staticfiles %}
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html lang="en">
 
 <head>
 	<title> {% block title %} {% endblock %} </title>
+	<link rel = "stylesheet" type="text/css" href="{% static "style.css" %}">
 </head>
 
 <body>
 	<h1> My helpful timestamp site </h1>
+	<p> hai world </p>
 	{% block content %} {% endblock %} 
 
 	{% block footer %}

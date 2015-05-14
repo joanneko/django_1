@@ -1,9 +1,8 @@
-from django.conf.urls import patterns, include, url
-from project1.views import display_meta, hello, current_datetime, hours_ahead, hours_behind
-from django.contrib import admin
-admin.autodiscover() 
+from django.conf.urls.defaults import *
+from django.contrib import admin 
 from books import views as books_views 
 from contact import views as contact_views 
+from project1 import views
 
 
 # Uncomment the next two lines to enable the admin:
@@ -11,11 +10,11 @@ from contact import views as contact_views
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-	('^hello/$', hello),
-	('^$', hello),
-	('^time/$', current_datetime), 
-	(r'^time/plus/(\d{1,2})/$', hours_ahead),
-	(r'^time/minus/(\d{1,2})/$', hours_behind),
+    ('^hello/$', views.hello),
+    ('^$', views.hello),
+    ('^time/$', views.current_datetime), 
+    (r'^time/plus/(\d{1,2})/$', views.hours_ahead),
+    (r'^time/minus/(\d{1,2})/$', views.hours_behind),
     # Examples:
     # url(r'^$', 'project1.views.home', name='home'),
     # url(r'^project1/', include('project1.foo.urls')),
