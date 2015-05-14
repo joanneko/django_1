@@ -17,6 +17,7 @@ class Publisher (models.Model):
 
 class Author(models.Model):
 	first_name = models.CharField(max_length=30)
+	middle_name = models.CharField(max_length = 30, blank=True)
 	last_name = models.CharField(max_length=40)
 	email = models.EmailField(blank=True)
 
